@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { Download, Trash } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React, { FormEvent, useCallback, useEffect, useState } from "react";
 import { Accept, useDropzone } from "react-dropzone";
 
@@ -22,6 +23,7 @@ const fileObject = {
 };
 
 const page = (props: Props) => {
+  const router = useRouter();
   const [data, setData] = useState({ title: "", publish_year: "", poster: "" });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -208,6 +210,7 @@ const page = (props: Props) => {
                 <div className="mt-12 flex gap-6">
                   <button
                     type="button"
+                    onClick={() => router.push("/movie/list")}
                     className="flex w-full justify-center border border-1 rounded-[10px] py-[15px] gap-[5px] sm:leading-base sm:text-sm font-bold leading-base text-white focus:outline-none"
                   >
                     Cancel

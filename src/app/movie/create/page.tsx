@@ -153,6 +153,7 @@ const page = (props: Props) => {
             <div className="mt-12 flex gap-6">
               <button
                 type="button"
+                onClick={() => router.push("/movie/list")}
                 className="flex w-full justify-center border border-1 rounded-[10px] py-[15px] gap-[5px] sm:leading-base sm:text-sm font-bold leading-base text-white focus:outline-none"
               >
                 Cancel
