@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -16,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        {children}
+        <img className="fixed bottom-0 w-screen" src="/footer-1.svg" />
+        <img className="fixed bottom-0 w-screen" src="/footer-2.svg" />
+      </body>
     </html>
   );
 }

@@ -25,7 +25,7 @@ const config: Config = {
         md: "1.5rem", // Example custom font size for h4
         base: "1.25rem", // Example custom font size for h5 and default heading size
         sm: "1rem", // Example custom font size for h6
-        "body-sm": "0.9rem",
+        "body-sm": "0.875rem",
         "body-xs": "0.8rem",
       },
       lineHeight: {
