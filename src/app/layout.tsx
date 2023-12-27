@@ -19,8 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         {children}
-        <img className="fixed bottom-0 w-screen" src="/footer-1.svg" />
-        <img className="fixed bottom-0 w-screen" src="/footer-2.svg" />
+        <footer>
+          <img className="fixed bottom-0 w-screen" src="/footer-1.svg" />
+          <img className="fixed bottom-0 w-screen" src="/footer-2.svg" />
+        </footer>
       </body>
     </html>
   );

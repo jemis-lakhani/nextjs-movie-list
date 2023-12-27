@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie Management App
 
 ## Getting Started
 
-First, run the development server:
+1. Create .env file and provide URI from Mongo Atlas. Ex.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+bash
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# .env file in the root of the project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+MONGODB_URI=mongodb+srv://<username>:<password>@<Cluster-Name>/?retryWrites=true&w=majority
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Routes:
 
-## Learn More
+### 1. /sign-in
 
-To learn more about Next.js, take a look at the following resources:
+- The Sign In page with email and password validation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Password criteria:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- At least one Upprcase letter
+- At least one number
+- At least one special character
+- Minimun length of 8
 
-## Deploy on Vercel
+#### Note:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- _Create a demo user in users table manually to test sign in._
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### 2. /movie/list
+
+- List all the created movies
+- Click on plus button to create a new movie
+- Click on logout button to redirect to Sign in page
+- Click on a movie card to edit the movie
+
+### 3. /movie/create
+
+- Create a movie with all mandatory fields:
+  - Title
+  - Poster Image
+  - Publish Year
+- Click on cancel button to abort
+
+### 4. /movie/edit
+
+- Edit any of the fields of the movie
+- Click on Cancel button to abort

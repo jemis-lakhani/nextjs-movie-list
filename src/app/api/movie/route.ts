@@ -60,7 +60,6 @@ export async function PATCH(request: NextRequest) {
       const blob = value as Blob;
       buffer = Buffer.from(await blob.arrayBuffer());
     }
-    console.log({ buffer });
   }
   const update = {
     ...(data.get("title") && { title: data.get("title") }),

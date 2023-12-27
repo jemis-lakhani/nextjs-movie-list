@@ -92,9 +92,9 @@ const page = (props: Props) => {
           },
         })
         .then((data) => {
-          console.log({ data });
+          console.log(data);
 
-          if (data?.statusText === "OK") {
+          if (data?.data?.status === 200) {
             setData(data?.data?.movie[0]);
             setTitle(data?.data?.movie[0].title);
             setPublishingYear(data?.data?.movie[0].publish_year);
@@ -111,8 +111,6 @@ const page = (props: Props) => {
     };
     fetchData();
   }, []);
-
-  console.log("state data", data.poster, { currentImage });
 
   return (
     <React.Fragment>

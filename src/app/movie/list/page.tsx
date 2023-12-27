@@ -12,13 +12,11 @@ export default function movieList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/movie"); // Replace with your API endpoint
+        const response = await fetch("http://localhost:3000/api/movie");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
-
         const result = await response.json();
-        console.log({ result });
         setData(result.movies);
         setLoading(false);
       } catch (error: any) {
@@ -40,15 +38,17 @@ export default function movieList() {
 
       <div className="grid grid-cols-4 gap-4 w-[90%] mx-auto">
         {data ? (
-          data.map((item: any, index: any) => (
-            <Card
-              key={index}
-              _id={item._id}
-              title={item.title}
-              publish_year={item.publish_year}
-              poster={item.poster}
-            ></Card>
-          ))
+          data
+            .slice(0, 8)
+            .map((item: any, index: any) => (
+              <Card
+                key={index}
+                _id={item._id}
+                title={item.title}
+                publish_year={item.publish_year}
+                poster={item.poster}
+              ></Card>
+            ))
         ) : (
           <p>No Movies Found!</p>
         )}
