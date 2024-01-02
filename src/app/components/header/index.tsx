@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/navigation";
 import AddCircle from "../common/add_circle";
 import Logout from "../common/logout";
