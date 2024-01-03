@@ -12,7 +12,7 @@ export default function MovieList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/movie");
+        const response = await fetch(`${process.env.APP_URL}/api/movie`);
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
