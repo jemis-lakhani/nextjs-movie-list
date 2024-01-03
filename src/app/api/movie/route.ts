@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/lib/dbConnect";
 import Movies from "@/app/model/Movie";
-import { NextApiResponse } from "next";
 
 dbConnect();
 
