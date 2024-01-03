@@ -86,7 +86,7 @@ const Page = (props: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios
-        .get(`${process.env.APP_URL}/api/movie`, {
+        .get(`${process.env.NEXT_PUBLIC_APP_URL}/api/movie`, {
           params: {
             id,
           },
