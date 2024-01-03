@@ -21,7 +21,7 @@ const Page = (props: Props) => {
     if (isDataValid()) {
       await axios
         .post(
-          `${process.env.NEXT_PUBLIC_APP_URL}/api/signin`,
+          "/api/signin",
           {
             email,
             password,
